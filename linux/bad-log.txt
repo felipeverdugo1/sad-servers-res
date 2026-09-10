@@ -1,0 +1,27 @@
+
+
+Scenario: "Saint John": what is writing to this log file?
+
+Level: Easy
+
+Description: A developer created a testing program that is continuously writing to a log file /var/log/bad.log and filling up disk. You can check for example with tail -f /var/log/bad.log.
+This program is no longer needed. Find it and terminate it. Do not delete the log file.
+
+Test: The log file size doesn't change (within a time interval bigger than the rate of change of the log file).
+
+The "Check My Solution" button runs the script /home/admin/agent/check.sh, which you can see and execute.
+
+Time to Solve: 10 minutes.
+
+OS: Debian 11
+
+Root (sudo) Access: Yes
+
+tail -f /var/log/bad.log
+
+crontab -e
+
+pkill -f badlog.py
+
+Mirando los servicios, tenia el crono con 2 tareas y una era esta app que generaba el log abusivo, lo que hicimos ya que no se requeria mas fue borrar directamente la linea del cronotab, auque se podria comentar, y por las dudas ejecutamos pkill -f badlog.py porlas dudas
+

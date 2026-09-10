@@ -1,5 +1,5 @@
 # 🛠️ Sad Servers - Writeups & Soluciones
-
+[![SadServers Level](https://img.shields.io/badge/SadServers-Intermediate-2962FF?style=for-the-badge&labelColor=FFC400&logo=ansible&logoColor=1A237E&logoSize=auto)](https://sadservers.com)
 Este repositorio contiene las soluciones, notas y comandos utilizados para resolver las dinámicas de [Sad Servers](https://sadservers.com) ("Like LeetCode for Linux / DevOps").
 
 El objetivo es documentar las prácticas de troubleshooting, administración de sistemas y depuración en entornos Linux.
