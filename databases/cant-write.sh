@@ -178,3 +178,46 @@ El motor reporta que no tiene espacio para escribir en /opt/pgdata.
 
 
 Habia que enfocarse en el mensaje claro del fatal error
+
+/dev/nvme0n1     8.0G  8.0G   28K 100% /opt/pgdata
+
+/dev/nvme0n1      1464  1281    183   88% /opt/pgdata
+
+drwxr-xr-x 3 postgres postgres 82 May 21  2022 /opt/pgdata
+
+ls /opt/pgdata
+-rw-r--r--  1 root     root             69 May 21  2022 deleteme
+-rw-r--r--  1 root     root     7516192768 May 21  2022 file1.bk
+-rw-r--r--  1 root     root      967774208 May 21  2022 file2.bk
+-rw-r--r--  1 root     root         499712 May 21  2022 file3.bk
+drwx------ 19 postgres postgres       4096 May 21  2022 main
+
+Tenemos estos archivos en pgdata,lo que tenemos que hacer es mover algun back up alguna otra particion ya que esto no nos permite prender el servicio o borrar(evitarlo si es posible)
+
+Reporte: En este caso nos presentaron un problema con esta estructura
+
+Un Clúster (14-main): Es una instancia del motor de base de datos corriendo en el puerto 5432 y gestionando un directorio de datos específico (en tu caso, /opt/pgdata/main).
+
+Las Bases de Datos (Dentro del Clúster): Un solo clúster puede contener múltiples bases de datos independientes (por ejemplo: postgres, mi_app_prod, otra_bd)
+
+Con lo cual el servicio nos daba fatal error por falta de espacio, mirando las configuraciones, donde la carpeta main es el Data Directory del clúster 14-main. No es solo un "gestor" o "configuración", ahí adentro están físicamente almacenados todos los registros de tus tablas junto con la infraestructura del motor. Y investigando para levatar el servicio de nuevo, necesita al menos 10 a 50 MB
+
+ls -lh /opt/pgdata
+
+-rw-r--r-- 1 root     root       69 May 21  2022 deleteme
+-rw-r--r-- 1 root     root     7.0G May 21  2022 file1.bk
+-rw-r--r-- 1 root     root     923M May 21  2022 file2.bk
+-rw-r--r-- 1 root     root     488K May 21  2022 file3.bk
+drwx------ 19 postgres postgres 4.0K May 21  2022 main
+
+
+Y viendo la lista, lo que decidimos es crear en / una carpeta que se llame backups y ahi dentro mover cualuqiera de estos backups,en este caso borrando deleteme funcionaria luego usando los comandos
+
+sudo pg_ctlcluster 14 main start
+
+sudo systemctl start postgresql@14-main
+
+Ya el servicio queda puesto a punto para usarse
+
+
+
