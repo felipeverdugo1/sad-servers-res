@@ -1,70 +1,177 @@
-#!/bin/bash
-# Description: Automated health check requiring ONLY the service name
-# Usage: ./service-check.sh <service_name>
-# With erros
-#./service-check.sh mysql > file.txt 2>&1
-# Append to file.txt and display on screen simultaneously:
-#./service-check.sh nginx 2>&1 | tee -a file.txt
-# Example: ./service-check.sh nginx
+===================================================================
 
-chmod +x service-check.sh
+ CHEAT SHEET: COMANDOS BÁSICOS ANTE CAÍDA DE UN SERVIDOR LINUX
 
-SERVICE_NAME="${1:?Error: Please provide a service name (e.g. ./health_check.sh nginx)}"
+===================================================================
 
-echo "=========================================="
-echo " Starting Health Check for: ${SERVICE_NAME}"
-echo " Date: $(date)"
-echo "=========================================="
 
-# --------------------------------------------------
-# 1. Check Service & Systemd Status
-# --------------------------------------------------
-echo -e "\n[1/4] Checking Systemd Service Status..."
-if systemctl is-active --quiet "${SERVICE_NAME}"; then
-    echo "✔ Service '${SERVICE_NAME}' is ACTIVE"
-else
-    echo "✖ Service '${SERVICE_NAME}' is NOT active!"
-    systemctl status "${SERVICE_NAME}" --no-pager -l
-fi
 
-# --------------------------------------------------
-# 2. Auto-Detect Active Port & Check Listener State
-# --------------------------------------------------
-echo -e "\n[2/4] Auto-Detecting Listening Ports..."
+-------------------------------------------------------------------
 
-# Get main PID
-PID=$(pgrep -f "${SERVICE_NAME}" | head -n 1)
+ 1. RECURSOS Y RENDIMIENTO DEL SISTEMA (CPU, MEMORIA, DISCO)
 
-if [ -n "${PID}" ]; then
-    # Extract listening port numbers associated with the detected PID
-    DETECTED_PORTS=$(ss -tulpn | grep "pid=${PID}," | awk '{print $5}' | awk -F':' '{print $NF}' | sort -u | tr '\n' ' ')
-    
-    if [ -n "${DETECTED_PORTS}" ]; then
-        echo "✔ Service '${SERVICE_NAME}' (PID ${PID}) is listening on port(s): ${DETECTED_PORTS}"
-    else
-        echo "⚠ Service is running (PID ${PID}), but no active listening ports were found."
-    fi
-else
-    echo "✖ Could not auto-detect port: Service process is not running."
-fi
+-------------------------------------------------------------------
 
-# --------------------------------------------------
-# 3. Check Resource Usage (CPU, Memory, PID)
-# --------------------------------------------------
-echo -e "\n[3/4] Checking Resource Usage..."
-if [ -n "${PID}" ]; then
-    echo "✔ Main PID: ${PID}"
-    ps aux | awk -v pid="${PID}" '$2 == pid {print "   CPU Usage: " $3 "% | Memory Usage: " $4 "%"}'
-else
-    echo "✖ Skipping resource check: Process PID not found."
-fi
 
-# --------------------------------------------------
-# 4. Check Recent System Logs for Errors
-# --------------------------------------------------
-echo -e "\n[4/4] Fetching Recent Logs (Last 5 Error Entries)..."
-journalctl -u "${SERVICE_NAME}" -p err..emerg -n 5 --no-pager
 
-echo -e "\n=========================================="
-echo " Health Check Complete"
-echo "=========================================="
+top
+
+# Muestra los procesos en tiempo real, uso de CPU y memoria RAM.
+
+
+
+htop
+
+# Visor interactivo y visual del rendimiento de CPU, memoria y procesos.
+
+
+
+free -h
+
+# Muestra el uso actual, disponible y libre de memoria RAM y SWAP.
+
+
+
+df -h
+
+# Muestra el espacio en disco usado y disponible en todos los puntos de montaje.
+
+
+
+uptime
+
+# Indica cuánto tiempo lleva encendido el equipo, usuarios y la carga promedio (load average).
+
+
+
+-------------------------------------------------------------------
+
+ 2. ESTADO DE SERVICIOS Y PROCESOS
+
+-------------------------------------------------------------------
+
+
+
+systemctl list-units --failed
+
+# Lista todos los servicios o unidades de systemd que han fallado.
+
+
+
+systemctl status <nombre_servicio> -l --no-pager
+
+# Muestra el estado actual (activo/inactivo) y últimos registros de un servicio específico.
+
+
+
+journalctl -u <nombre_servicio> -e -n 50 --no-pager
+
+# Muestra las últimas 50 líneas de registro (logs) de un servicio en particular.
+
+
+
+ps aux --sort=-%cpu | head -n 10
+
+# Lista los 10 procesos que más CPU están consumiendo en el sistema.
+
+
+
+ps aux --sort=-%mem | head -n 10
+
+# Lista los 10 procesos que más memoria RAM están consumiendo.
+
+
+
+-------------------------------------------------------------------
+
+ 3. RED, PUERTOS Y CONECTIVIDAD
+
+-------------------------------------------------------------------
+
+
+
+ss -tulpn
+
+# Muestra todos los puertos TCP/UDP abiertos y qué proceso/PID escucha en ellos.
+
+
+
+netstat -tulpn
+
+# Alternativa clásica para ver puertos en escucha y procesos asociados.
+
+
+
+ip a
+
+# Lista las interfaces de red del servidor y sus direcciones IP configuradas.
+
+
+
+ping -c 4 8.8.8.8
+
+# Prueba la conectividad básica hacia internet o un destino externo.
+
+
+
+curl -Iv http://localhost
+
+# Envía una petición HTTP local probando si la web/servicio responde adecuadamente.
+
+
+
+-------------------------------------------------------------------
+
+ 4. REVISIÓN DE LOGS Y ERRORES DEL SISTEMA
+
+-------------------------------------------------------------------
+
+
+
+journalctl -xe -p err..emerg -n 50 --no-pager
+
+# Muestra los últimos 50 eventos críticos o errores del kernel y sistema.
+
+
+
+dmesg -T | tail -n 30
+
+# Muestra los últimos 30 mensajes del kernel con fecha y hora (útil para fallos de hardware/disco/OOM Killer).
+
+
+
+tail -f /var/log/syslog
+
+# Monitorea en tiempo real el registro general del sistema (en Debian/Ubuntu).
+
+
+
+tail -f /var/log/messages
+
+# Monitorea en tiempo real el registro general del sistema (en RHEL/CentOS/Rocky).
+
+
+
+-------------------------------------------------------------------
+
+ 5. DIAGNÓSTICO DE ARCHIVOS Y ESPACIO
+
+-------------------------------------------------------------------
+
+
+
+lsof -i :<puerto>
+
+# Identifica con precisión qué proceso está utilizando un puerto específico.
+
+
+
+du -sh /* 2>/dev/null | sort -h
+
+# Calcula el peso de cada carpeta en la raíz para detectar dónde se llena el disco.
+
+
+
+fuser -v /var/log
+
+# Muestra los procesos que están manteniendo abiertos o bloqueando archivos en un directorio.
