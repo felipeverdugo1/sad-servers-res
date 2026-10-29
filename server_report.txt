@@ -1,0 +1,240 @@
+==========================================
+ CHEQUEO DE RECURSOS (CPU, RAM, DISCO)
+==========================================
+
+--- Uptime y Carga del Sistema ---
+ 15:27:34 up  5:24,  1 user,  load average: 0,51, 0,83, 0,96
+
+--- Uso de Memoria RAM ---
+              total       usado       libre  compartido búfer/caché  disponible
+Memoria:       3,6Gi       2,0Gi       449Mi        66Mi       1,2Gi       1,3Gi
+Swap:            0B          0B          0B
+
+--- Espacio en Disco ---
+S.ficheros     Tamaño Usados  Disp Uso% Montado en
+udev             1,8G      0  1,8G   0% /dev
+tmpfs            372M   1,5M  370M   1% /run
+/dev/sda1        110G    27G   78G  26% /
+tmpfs            1,9G      0  1,9G   0% /dev/shm
+tmpfs            5,0M   4,0K  5,0M   1% /run/lock
+tmpfs            1,9G      0  1,9G   0% /sys/fs/cgroup
+tmpfs            1,9G      0  1,9G   0% /tmp
+tmpfs            372M    12K  372M   1% /run/user/1000
+
+--- Procesos con mayor uso de CPU ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+felipe      1527 17.1 14.1 3733244 537828 ?      Sl   10:04  55:13 /usr/lib/firefox/firefox
+felipe      1699 15.4 13.3 3279200 505712 ?      Rl   10:04  49:49 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 38234 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {f19991d5-1b02-4a33-bb91-92ec24c7f864} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 4 tab
+felipe      8278  7.7 12.4 3042132 471772 ?      Sl   12:54  11:50 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 38966 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {758faa54-51cf-45e7-a432-a5a7ed8667ef} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 28 tab
+root         711  3.1  1.7 359712 65612 tty1     Ssl+ 10:03  10:08 /usr/lib/xorg/Xorg -nolisten tcp -auth /var/run/sddm/{d34cca6b-e4bc-4031-8238-12198d65da98} -background none -noreset -displayfd 17 -seat seat0 vt1
+felipe     11844  1.2  0.2  20396  9012 pts/2    Ss   15:22   0:03 /usr/bin/zsh
+felipe      1781  0.8  1.4 379732 56896 ?        Sl   10:04   2:37 /usr/lib/firefox/firefox -contentproc -parentBuildID 20250227124745 -sandboxingKind 0 -prefsHandle 0 -prefsLen 44087 -prefMapHandle 1 -prefMapSize 265393 -sandboxReporter 2 -chrootClient 3 -ipcHandle 4 -initialChannelId {e4f5a657-47da-4566-93df-16b25330c929} -parentPid 1527 -crashReporter 5 -appDir /usr/lib/firefox/browser 6 utility
+felipe       821  0.7  0.4 961400 15380 ?        S<sl 10:03   2:20 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+avahi        428  0.4  0.1   9740  4844 ?        Ss   10:03   1:31 avahi-daemon: running [felipe.local]
+felipe      1705  0.4  8.2 2960204 314252 ?      Sl   10:04   1:18 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 43957 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {231ac08e-ad88-47c4-98e8-9dddf4dba899} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 5 tab
+
+--- Procesos con mayor uso de Memoria ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+felipe      1527 17.1 14.1 3733244 537828 ?      Sl   10:04  55:13 /usr/lib/firefox/firefox
+felipe      1699 15.4 13.3 3279200 505712 ?      Sl   10:04  49:49 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 38234 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {f19991d5-1b02-4a33-bb91-92ec24c7f864} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 4 tab
+felipe      8278  7.7 12.4 3042132 471772 ?      Sl   12:54  11:50 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 38966 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {758faa54-51cf-45e7-a432-a5a7ed8667ef} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 28 tab
+felipe      1705  0.4  8.2 2960204 314252 ?      Sl   10:04   1:18 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 43957 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {231ac08e-ad88-47c4-98e8-9dddf4dba899} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 5 tab
+felipe      3778  0.1  4.2 2587864 161636 ?      Sl   10:59   0:22 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 38577 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {2147bf56-9da5-4bb0-87c2-6a9f1fa7739c} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 10 tab
+felipe      1630  0.0  3.7 2511156 141892 ?      Sl   10:04   0:13 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 35890 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {9ca05812-bdd8-49e8-88a5-10aebc34ddd7} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 2 tab
+felipe      8316  0.0  2.4 2450436 93904 ?       Sl   12:55   0:08 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 38966 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {7a47ec13-3efa-4271-82a2-812ac1ae037b} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 29 tab
+felipe      8494  0.0  2.1 2434228 82724 ?       Sl   12:57   0:00 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 38966 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {48860f52-eea8-423d-a7c4-cb25e3addab3} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 30 tab
+felipe      8900  0.0  2.1 2434228 81916 ?       Sl   13:39   0:00 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 38968 -prefMapHandle 1 -prefMapSize 265393 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {46cdacf6-e658-4d43-a380-96d2f197db5d} -parentPid 1527 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 32 tab
+==========================================
+ ESTADO DE SERVICIOS Y PROCESOS
+==========================================
+
+--- Servicios de Systemd Fallidos ---
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+==========================================
+ RED, PUERTOS Y CONECTIVIDAD
+==========================================
+
+--- Puertos Abiertos y Procesos Escuchando ---
+Netid   State    Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  Process                                                                         
+udp     UNCONN   0        0          127.0.0.53%lo:53             0.0.0.0:*                                                                                     
+udp     UNCONN   0        0                0.0.0.0:5353           0.0.0.0:*                                                                                     
+udp     UNCONN   0        0                0.0.0.0:48808          0.0.0.0:*                                                                                     
+udp     UNCONN   0        0                      *:6666                 *:*      users:(("qlipper",pid=1098,fd=13))                                             
+udp     UNCONN   0        0                      *:49866                *:*      users:(("firefox",pid=1527,fd=52))                                             
+udp     UNCONN   0        0                   [::]:35969             [::]:*                                                                                     
+udp     UNCONN   0        0                   [::]:5353              [::]:*                                                                                     
+udp     UNCONN   0        0                      *:40544                *:*      users:(("firefox",pid=1527,fd=135))                                            
+tcp     LISTEN   0        4096       127.0.0.53%lo:53             0.0.0.0:*                                                                                     
+tcp     LISTEN   0        5              127.0.0.1:631            0.0.0.0:*                                                                                     
+tcp     LISTEN   0        5                  [::1]:631               [::]:*                                                                                     
+
+--- Interfaces de Red y IPs ---
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp4s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether e8:11:32:c6:75:5c brd ff:ff:ff:ff:ff:ff
+3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:24:d6:1f:ba:5e brd ff:ff:ff:ff:ff:ff
+    inet 163.10.143.44/22 brd 163.10.143.255 scope global dynamic noprefixroute wlp2s0
+       valid_lft 668sec preferred_lft 668sec
+    inet6 2800:340:52:144:3791:868a:f9d2:a113/64 scope global temporary dynamic 
+       valid_lft 598268sec preferred_lft 79684sec
+    inet6 2800:340:52:144:d9fb:a2a3:6686:86b0/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 2591993sec preferred_lft 604793sec
+    inet6 fe80::7b92:f5e0:32ee:6148/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 46:0b:8f:fb:62:fa brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+
+--- Prueba de Conectividad Externa ---
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=116 time=20.2 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=116 time=23.0 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=116 time=189 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=116 time=81.6 ms
+
+--- 8.8.8.8 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 20.161/78.409/188.837/68.312 ms
+
+--- Prueba de Conexión HTTP Local ---
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying ::1:80...
+* TCP_NODELAY set
+* connect to ::1 port 80 failed: Conexión rehusada
+*   Trying 127.0.0.1:80...
+* TCP_NODELAY set
+* connect to 127.0.0.1 port 80 failed: Conexión rehusada
+* Failed to connect to localhost port 80: Conexión rehusada
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+* Closing connection 0
+curl: (7) Failed to connect to localhost port 80: Conexión rehusada
+==========================================
+ LOGS DEL SISTEMA Y ERRORES RECENTES
+==========================================
+
+--- Logs Recientes de Errores Críticos (Journalctl) ---
+-- Logs begin at Sun 2026-08-30 16:47:05 -03, end at Tue 2026-10-27 15:19:52 -03. --
+oct 26 15:55:57 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 26 15:56:35 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 26 15:57:13 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 26 15:57:52 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 26 15:58:27 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 26 15:59:05 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 26 15:59:43 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 26 16:00:17 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+-- Reboot --
+oct 27 10:03:05 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 10:03:12 felipe sddm-helper[813]: gkr-pam: unable to locate daemon control file
+oct 27 10:04:26 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:19:15 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:19:53 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:20:10 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:20:44 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:21:22 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:22:00 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:22:34 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:23:10 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:23:45 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:24:56 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:25:31 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:26:10 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:26:45 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:27:23 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:27:58 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:28:36 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:29:09 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:29:45 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:30:20 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:30:53 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:31:28 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:32:04 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:32:40 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:33:19 felipe wpa_supplicant[478]: RRM: Unexpected neighbor report
+oct 27 11:33:58 felipe wpa_supplicant[478]: RRM: Unexpected neighb
+--- Mensajes del Kernel Recientes (dmesg) ---
+[mar oct 27 12:47:45 2026] wlp2s0: send auth to f6:9f:c2:ca:f5:2e (try 2/3)
+[mar oct 27 12:47:45 2026] wlp2s0: send auth to f6:9f:c2:ca:f5:2e (try 3/3)
+[mar oct 27 12:47:45 2026] wlp2s0: authentication with f6:9f:c2:ca:f5:2e timed out
+[mar oct 27 12:47:45 2026] wlp2s0: authenticate with f6:9f:c2:ca:fa:be
+[mar oct 27 12:47:45 2026] wlp2s0: send auth to f6:9f:c2:ca:fa:be (try 1/3)
+[mar oct 27 12:47:45 2026] wlp2s0: send auth to f6:9f:c2:ca:fa:be (try 2/3)
+[mar oct 27 12:47:46 2026] wlp2s0: authenticated
+[mar oct 27 12:47:46 2026] wlp2s0: waiting for beacon from f6:9f:c2:ca:fa:be
+[mar oct 27 12:47:46 2026] wlp2s0: associate with f6:9f:c2:ca:fa:be (try 1/3)
+[mar oct 27 12:47:46 2026] wlp2s0: RX AssocResp from f6:9f:c2:ca:fa:be (capab=0x1511 status=0 aid=23)
+[mar oct 27 12:47:46 2026] wlp2s0: associated
+[mar oct 27 12:47:46 2026] wlp2s0: Limiting TX power to 17 (17 - 0) dBm as advertised by f6:9f:c2:ca:fa:be
+[mar oct 27 13:19:26 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 13:19:26 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+[mar oct 27 13:42:25 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 13:42:25 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+[mar oct 27 14:19:45 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 14:19:45 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+[mar oct 27 14:21:04 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 14:21:04 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+[mar oct 27 14:21:06 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 14:21:06 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+[mar oct 27 14:23:19 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 14:23:19 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+[mar oct 27 14:23:36 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 14:23:36 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+[mar oct 27 14:23:58 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 14:23:58 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+[mar oct 27 14:24:27 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+[mar oct 27 14:24:27 2026] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+
+--- Últimas líneas de /var/log/syslog ---
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0333] dhcp4 (wlp2s0): option requested_domain_search => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0333] dhcp4 (wlp2s0): option requested_host_name  => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0333] dhcp4 (wlp2s0): option requested_interface_mtu => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0333] dhcp4 (wlp2s0): option requested_ms_classless_static_routes => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0333] dhcp4 (wlp2s0): option requested_nis_domain => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0334] dhcp4 (wlp2s0): option requested_nis_servers => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0334] dhcp4 (wlp2s0): option requested_ntp_servers => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0334] dhcp4 (wlp2s0): option requested_rfc3442_classless_static_routes => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0334] dhcp4 (wlp2s0): option requested_root_path  => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0334] dhcp4 (wlp2s0): option requested_routers    => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0334] dhcp4 (wlp2s0): option requested_static_routes => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0334] dhcp4 (wlp2s0): option requested_subnet_mask => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0334] dhcp4 (wlp2s0): option requested_time_offset => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0335] dhcp4 (wlp2s0): option requested_wpad       => '1'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0335] dhcp4 (wlp2s0): option routers              => '163.10.140.1'
+Oct 27 15:18:42 felipe dbus-daemon[436]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.13' (uid=0 pid=438 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0335] dhcp4 (wlp2s0): option subnet_mask          => '255.255.252.0'
+Oct 27 15:18:42 felipe NetworkManager[438]: <info>  [1793125122.0335] dhcp4 (wlp2s0): state changed extended -> extended
+Oct 27 15:18:42 felipe systemd[1]: Starting Network Manager Script Dispatcher Service...
+Oct 27 15:18:42 felipe dbus-daemon[436]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Oct 27 15:18:42 felipe systemd[1]: Started Network Manager Script Dispatcher Service.
+Oct 27 15:18:44 felipe kernel: [15625.751634] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+Oct 27 15:18:44 felipe kernel: [15625.762496] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+Oct 27 15:18:51 felipe systemd[1]: NetworkManager-dispatcher.service: Succeeded.
+Oct 27 15:19:00 felipe kernel: [15642.063822] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+Oct 27 15:19:00 felipe kernel: [15642.074703] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+Oct 27 15:19:22 felipe kernel: [15664.053724] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+Oct 27 15:19:22 felipe kernel: [15664.088095] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+Oct 27 15:19:52 felipe kernel: [15693.801774] psmouse serio1: Touchpad at isa0060/serio1/input0 lost sync at byte 6
+Oct 27 15:19:52 felipe kernel: [15693.821506] psmouse serio1: Touchpad at isa0060/serio1/input0 - driver resynced.
+==========================================
+ ARCHIVOS Y ALMACENAMIENTO
+==========================================
+
+--- Directorios de Mayor Tamaño en Root ---
+8,0K	/media
+8,0K	/snap
+16K	/lost+found
+1,5M	/run
+7,4M	/etc
+309M	/boot
+478M	/opt
+1,5G	/var
+6,1G	/usr
+13G	/home
